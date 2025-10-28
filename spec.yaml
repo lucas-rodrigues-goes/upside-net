@@ -1,0 +1,23 @@
+fabric:
+  cas:
+    - ca.hawkins.com
+    - ca.montauk.com
+    - ca.oakridge.com
+  peers:
+    - peer1.hawkins.com
+    - peer1.montauk.com
+    - peer1.oakridge.com
+  orderers:
+    - orderer.upside.com
+  settings:
+    FABRIC_VERSION: 2.5.5
+    FABRIC_CA_VERSION: 1.5.7
+    CHANNEL_NAME: upsidechannel
+    DB_TYPE: couchdb
+  orgs:
+    - name: Hawkins
+      domain: hawkins.com
+    - name: Montauk
+      domain: montauk.com
+    - name: OakRidge
+      domain: oakridge.com
