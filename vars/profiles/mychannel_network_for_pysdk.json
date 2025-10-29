@@ -1,0 +1,138 @@
+{
+  "name": "fabric-network",
+  "description": "Generated network configuration file",
+  "version": "0.1",
+  "client": {
+    "organization": "hawkins.com",
+    "credentialStore": {
+      "path": "/tmp/hfc-kvs",
+      "cryptoStore": {
+        "path": "/tmp/hfc-cvs"
+      },
+      "wallet": "wallet-name"
+    }
+  },
+  "organizations": {
+    "example.com": {
+      "mspid": "example-com",
+      "orderers": [
+        "orderer1.example.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem",
+          "private_key": "/keyfiles/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/51b7f921810294a21aede623ef906bebd42bad1030e81ecd7ab6bdaea85b3905_sk"
+        }
+      }
+    },
+    "hawkins.com": {
+      "mspid": "hawkins-com",
+      "peers": [
+        "peer.hawkins.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/signcerts/Admin@hawkins.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/keystore/92ced0134637e4597d7adef3a8fcf28af3bf98772814ea9f7ee7d631f14dede3_sk"
+        }
+      }
+    },
+    "montauk.com": {
+      "mspid": "montauk-com",
+      "peers": [
+        "peer.montauk.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/montauk.com/users/Admin@montauk.com/msp/signcerts/Admin@montauk.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/montauk.com/users/Admin@montauk.com/msp/keystore/686b04b599d667d0e3596b878707741ab86ece6a341dbd1f294fc3966d5d6964_sk"
+        }
+      }
+    },
+    "oakridge.com": {
+      "mspid": "oakridge-com",
+      "peers": [
+        "peer.oakridge.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/oakridge.com/users/Admin@oakridge.com/msp/signcerts/Admin@oakridge.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/oakridge.com/users/Admin@oakridge.com/msp/keystore/79a13d60eb821d70be97bd5ea4adf7882b03a8f57784ccd4bc4a21528e171cee_sk"
+        }
+      }
+    }
+  },
+  "orderers": {
+    "orderer1.example.com": {
+      "url": "orderer1.example.com:7050",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "orderer1.example.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/ordererOrganizations/example.com/orderers/orderer1.example.com/tls/ca.crt"
+      }
+    }
+  },
+  "peers": {
+    "peer.hawkins.com": {
+      "url": "peer.hawkins.com:7051",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer.hawkins.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/hawkins.com/peers/peer.hawkins.com/tls/ca.crt"
+      }
+    },
+    "peer.montauk.com": {
+      "url": "peer.montauk.com:7051",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer.montauk.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/montauk.com/peers/peer.montauk.com/tls/ca.crt"
+      }
+    },
+    "peer.oakridge.com": {
+      "url": "peer.oakridge.com:7051",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer.oakridge.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/oakridge.com/peers/peer.oakridge.com/tls/ca.crt"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca.hawkins.com": {
+      "url": "https://ca.hawkins.com:7054",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/hawkins.com/ca/ca.hawkins.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca.montauk.com": {
+      "url": "https://ca.montauk.com:7054",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/montauk.com/ca/ca.montauk.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca.oakridge.com": {
+      "url": "https://ca.oakridge.com:7054",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/oakridge.com/ca/ca.oakridge.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    }
+  }
+}

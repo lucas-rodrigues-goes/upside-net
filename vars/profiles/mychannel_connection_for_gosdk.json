@@ -1,0 +1,190 @@
+{
+  "name": "upside-net",
+  "x-comment-0": "ROOTPATH should be set to the absolute path of crypto material starting directory",
+  "x-comment-1": "for example: export ROOTPATH=/home/ubuntu/mywork/vars/keyfiles",
+  "x-type": "hlfv-1.4.4",
+  "version": "1.0.0",
+  "client": {
+    "organization": "montauk.com",
+    "cryptoconfig": {
+      "path": "${ROOTPATH}"
+    },
+    "connection": {
+      "timeout": {
+        "peer": { "endorser": "300", "eventHub": "300", "eventReg": "300"},
+        "orderer": "300"
+      }
+    }
+  },
+  "channels": {
+    "mychannel": {
+      "orderers": [
+        "orderer1.example.com"
+      ],
+      "peers": {
+        "peer.hawkins.com": {
+          "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true
+        },
+        "peer.montauk.com": {
+          "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true
+        },
+        "peer.oakridge.com": {
+          "endorsingPeer": true, "chaincodeQuery": true, "eventSource": true
+        }
+      }
+    }
+  },
+  "organizations": {
+    "example.com": {
+      "mspid": "example-com",
+      "cryptoPath": "ordererOrganizations/example.com/users/{username}@example.com/msp",
+      "orderers": [
+        "orderer1.example.com"
+      ],
+      "certificateAuthorities": [
+      ]
+    },
+    "hawkins.com": {
+      "mspid": "hawkins-com",
+      "cryptoPath": "peerOrganizations/hawkins.com/users/{username}@hawkins.com/msp",
+      "peers": [
+        "peer.hawkins.com"
+      ],
+      "certificateAuthorities": [
+       "ca.hawkins.com"
+      ]
+    },
+    "montauk.com": {
+      "mspid": "montauk-com",
+      "cryptoPath": "peerOrganizations/montauk.com/users/{username}@montauk.com/msp",
+      "peers": [
+        "peer.montauk.com"
+      ],
+      "certificateAuthorities": [
+       "ca.montauk.com"
+      ]
+    },
+    "oakridge.com": {
+      "mspid": "oakridge-com",
+      "cryptoPath": "peerOrganizations/oakridge.com/users/{username}@oakridge.com/msp",
+      "peers": [
+        "peer.oakridge.com"
+      ],
+      "certificateAuthorities": [
+       "ca.oakridge.com"
+      ]
+    }
+  },
+  "orderers": {
+    "orderer1.example.com": {
+      "url": "grpcs://orderer1.example.com:7050",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer1.example.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIICojCCAkigAwIBAgIUWvw92aKh6YcAcZCl+x88qyqSOVgwCgYIKoZIzj0EAwIw\najELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEaMBgGA1UEAwwRdGxzY2Eu\nZXhhbXBsZS5jb20wHhcNMjUxMDI5MDA1MzIyWhcNMzUxMDI3MDA1MzIyWjBqMQsw\nCQYDVQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1Jh\nbGVpZ2gxFDASBgNVBAoMC2V4YW1wbGUuY29tMRowGAYDVQQDDBF0bHNjYS5leGFt\ncGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBK1x/Ud4Bso0eWaoPkR\nAZkB7aClGGJJgTi72PwUWZ/IU3II8x8q460NJ7rfsSh4oR4JoeIzOl6ljkNunxkI\nrISjgcswgcgwHQYDVR0OBBYEFDP83DJX1D7e0/ppoZA2EcZU9T0GMB8GA1UdIwQY\nMBaAFDP83DJX1D7e0/ppoZA2EcZU9T0GMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0P\nAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBGBgNVHREE\nPzA9hwQaiIu7ghF0bHNjYS5leGFtcGxlLmNvbYIRdGxzY2EtZXhhbXBsZS1jb22C\nCWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNIADBFAiAzjOoyD/RiFMTuL7Bj\n2ToZF/XxQnVwEgLKa2G8fwDgfQIhAPLfComxPinNf+XOQmg01OcDirsMrtjQO9gM\nBO2iWGiC\n-----END CERTIFICATE-----"
+      }
+    }
+  },
+  "peers": {
+    "peer.hawkins.com": {
+      "url": "grpcs://peer.hawkins.com:7051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer.hawkins.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIICojCCAkigAwIBAgIUB62XMPLY5wXAH+qM9sswrVQpdfowCgYIKoZIzj0EAwIw\najELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRQwEgYDVQQKDAtoYXdraW5zLmNvbTEaMBgGA1UEAwwRdGxzY2Eu\naGF3a2lucy5jb20wHhcNMjUxMDI5MDA1NDAwWhcNMzUxMDI3MDA1NDAwWjBqMQsw\nCQYDVQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1Jh\nbGVpZ2gxFDASBgNVBAoMC2hhd2tpbnMuY29tMRowGAYDVQQDDBF0bHNjYS5oYXdr\naW5zLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGPSrPd383zPsX75XycT\nBJetZdLurr4A9jr9ECBXfvLcbmCusYzjJg8cmCSOz13JOpZa90EMiEFA21lTGozL\nzBKjgcswgcgwHQYDVR0OBBYEFA4bzt8MxKFOTtsKTYS8dk+H4IfLMB8GA1UdIwQY\nMBaAFA4bzt8MxKFOTtsKTYS8dk+H4IfLMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0P\nAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBGBgNVHREE\nPzA9hwQaiIu7ghF0bHNjYS5oYXdraW5zLmNvbYIRdGxzY2EtaGF3a2lucy1jb22C\nCWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNIADBFAiEAjNkviTP4nXkTQwXM\nN8aznwdZxwMjB+Y6IXA4BN3VG5ICIFhnzLasphvupawAAzts+8jpDo7jOJ+WU2bV\nVPXWE75w\n-----END CERTIFICATE-----"
+      }
+    },
+    "peer.montauk.com": {
+      "url": "grpcs://peer.montauk.com:7051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer.montauk.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIICojCCAkigAwIBAgIUCNqHkfRaeTCAYIxnb5IY0IcqdUowCgYIKoZIzj0EAwIw\najELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRQwEgYDVQQKDAttb250YXVrLmNvbTEaMBgGA1UEAwwRdGxzY2Eu\nbW9udGF1ay5jb20wHhcNMjUxMDI5MDA1NDM3WhcNMzUxMDI3MDA1NDM3WjBqMQsw\nCQYDVQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1Jh\nbGVpZ2gxFDASBgNVBAoMC21vbnRhdWsuY29tMRowGAYDVQQDDBF0bHNjYS5tb250\nYXVrLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABH1x3lL/GOMqwowvtCLt\neMRXEjkn9uM8px5rdx7K4dhQd4nVYOj5HDc4RsnNfmki7lojrOom5khEQF5ACdh0\nRoOjgcswgcgwHQYDVR0OBBYEFEzZqKmBrcTvpFoXbHdpngwL+HpHMB8GA1UdIwQY\nMBaAFEzZqKmBrcTvpFoXbHdpngwL+HpHMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0P\nAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBGBgNVHREE\nPzA9hwQaiIu7ghF0bHNjYS5tb250YXVrLmNvbYIRdGxzY2EtbW9udGF1ay1jb22C\nCWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNIADBFAiAFyKUe+igumEgVwPsM\nKIU/Xd1EYKlBRyHW3VLZcnfjYwIhAOp+B0Xt8VWVNoXiDknN2GE9/ECybkF/blMg\nO88oUUpE\n-----END CERTIFICATE-----"
+      }
+    },
+    "peer.oakridge.com": {
+      "url": "grpcs://peer.oakridge.com:7051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer.oakridge.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIICqDCCAk6gAwIBAgIUax+nGp7OMwrF5uFshW9uDlDWf14wCgYIKoZIzj0EAwIw\nbDELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRUwEwYDVQQKDAxvYWtyaWRnZS5jb20xGzAZBgNVBAMMEnRsc2Nh\nLm9ha3JpZGdlLmNvbTAeFw0yNTEwMjkwMDU1MTZaFw0zNTEwMjcwMDU1MTZaMGwx\nCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UEBwwH\nUmFsZWlnaDEVMBMGA1UECgwMb2FrcmlkZ2UuY29tMRswGQYDVQQDDBJ0bHNjYS5v\nYWtyaWRnZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQqLUmKTAskwROj\nZSQ9323IYa6D3YLFhtzIA/XjZWsJV/Iwx4BW693IsXCsRxffvVGWbvclMv7wddRS\n7X+G4GpMo4HNMIHKMB0GA1UdDgQWBBRMF5JlW3Sn/S5NHH9NiDFoAEYbxjAfBgNV\nHSMEGDAWgBRMF5JlW3Sn/S5NHH9NiDFoAEYbxjAPBgNVHRMBAf8EBTADAQH/MA4G\nA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwSAYD\nVR0RBEEwP4cEGoiLu4ISdGxzY2Eub2FrcmlkZ2UuY29tghJ0bHNjYS1vYWtyaWRn\nZS1jb22CCWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNIADBFAiANWujRJDQH\nTV6G0eobDPhJz/Xj/kuy+qOUeJkB0yHhbwIhAPv2+/UsO97En4ANNVwJg9cvGnfY\npLwELUo69j8Jfper\n-----END CERTIFICATE-----"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca.hawkins.com": {
+      "url": "https://ca.hawkins.com:7054",
+      "tlsCACerts": {
+        "pem": ["-----BEGIN CERTIFICATE-----\nMIIClTCCAjygAwIBAgIUVHkBcTSvATN2j9VjG4IHYpUrgVwwCgYIKoZIzj0EAwIw\nZzELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRQwEgYDVQQKDAtoYXdraW5zLmNvbTEXMBUGA1UEAwwOY2EuaGF3\na2lucy5jb20wHhcNMjUxMDI5MDA1NDAxWhcNMzUxMDI3MDA1NDAxWjBnMQswCQYD\nVQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVp\nZ2gxFDASBgNVBAoMC2hhd2tpbnMuY29tMRcwFQYDVQQDDA5jYS5oYXdraW5zLmNv\nbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABDP7PmZVB91EJl4PXWum60vvzltQ\ns7TQcer6RisgCc4XybgprGOrsIH/xy6CLUd+QfkBsY5JPj4Ff0Vk2Fv+cpujgcUw\ngcIwHQYDVR0OBBYEFJlnWjSgxR4ctfOeVBMttoDlbOirMB8GA1UdIwQYMBaAFJln\nWjSgxR4ctfOeVBMttoDlbOirMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQD\nAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBABgNVHREEOTA3hwQa\niIu7gg5jYS5oYXdraW5zLmNvbYIOY2EtaGF3a2lucy1jb22CCWxvY2FsaG9zdIcE\nfwAAATAKBggqhkjOPQQDAgNHADBEAiBtzizbQWRh8HY4s9V/azbcmFurzpnoHd19\niUNwpT6oRwIgcUrqkBzJyHNZBdOTEftNtGtgbr8zj9d4kYfVbiTeMCQ=\n-----END CERTIFICATE-----"]
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca.montauk.com": {
+      "url": "https://ca.montauk.com:7054",
+      "tlsCACerts": {
+        "pem": ["-----BEGIN CERTIFICATE-----\nMIIClTCCAjygAwIBAgIUfCgpsRHrs0iox+CU8Pbho2c2r+0wCgYIKoZIzj0EAwIw\nZzELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRQwEgYDVQQKDAttb250YXVrLmNvbTEXMBUGA1UEAwwOY2EubW9u\ndGF1ay5jb20wHhcNMjUxMDI5MDA1NDM3WhcNMzUxMDI3MDA1NDM3WjBnMQswCQYD\nVQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVp\nZ2gxFDASBgNVBAoMC21vbnRhdWsuY29tMRcwFQYDVQQDDA5jYS5tb250YXVrLmNv\nbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABO8M7n5LopZm5eYm5TGG2RRtyzja\n2F7lV1dKzfRhMGIh7u1BpelWf4gZn4VztO5Z2W/uiOnxFsJdULXGmquL9U+jgcUw\ngcIwHQYDVR0OBBYEFAqWfGcjDpKaoIp1O76GIClenqvtMB8GA1UdIwQYMBaAFAqW\nfGcjDpKaoIp1O76GIClenqvtMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQD\nAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjBABgNVHREEOTA3hwQa\niIu7gg5jYS5tb250YXVrLmNvbYIOY2EtbW9udGF1ay1jb22CCWxvY2FsaG9zdIcE\nfwAAATAKBggqhkjOPQQDAgNHADBEAiBYmGOcGZkd8trnHGrbNOl57ll917l2YRZB\nEiY2ffeQkwIgQl+G6t43cn4ipwPHy3U/Mr++TylORX2Jm2pFjg5RU2U=\n-----END CERTIFICATE-----"]
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca.oakridge.com": {
+      "url": "https://ca.oakridge.com:7054",
+      "tlsCACerts": {
+        "pem": ["-----BEGIN CERTIFICATE-----\nMIICnTCCAkKgAwIBAgIUAnZTmm3suP1dLGEFr4b4U+IZCbEwCgYIKoZIzj0EAwIw\naTELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH\nDAdSYWxlaWdoMRUwEwYDVQQKDAxvYWtyaWRnZS5jb20xGDAWBgNVBAMMD2NhLm9h\na3JpZGdlLmNvbTAeFw0yNTEwMjkwMDU1MTVaFw0zNTEwMjcwMDU1MTVaMGkxCzAJ\nBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UEBwwHUmFs\nZWlnaDEVMBMGA1UECgwMb2FrcmlkZ2UuY29tMRgwFgYDVQQDDA9jYS5vYWtyaWRn\nZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARCynCR+GusSeBG3CONa2aK\ndAMQaAtYYwrlzfQnqPvTgOIMYCKdO60PPszLyfuAxkL2PXGTQsH0JUaf/v5q/LIS\no4HHMIHEMB0GA1UdDgQWBBQqovCRVX6uoNgcXnwohHao8lk8cTAfBgNVHSMEGDAW\ngBQqovCRVX6uoNgcXnwohHao8lk8cTAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB\n/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwQgYDVR0RBDsw\nOYcEGoiLu4IPY2Eub2FrcmlkZ2UuY29tgg9jYS1vYWtyaWRnZS1jb22CCWxvY2Fs\naG9zdIcEfwAAATAKBggqhkjOPQQDAgNJADBGAiEA9lenr6037EyqGvSqBEK14Iv9\neu2D8zcJyw3PNEjKMP4CIQCRucVmnUnWBCjQFLzAYXsvTeAQoa8QNjIxnluvxpoV\nXg==\n-----END CERTIFICATE-----"]
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    }
+  },
+  "entityMatchers": {
+    "orderer": [
+      { "mappedHost": "orderer1.example.com",
+        "pattern": "(\\w*)orderer1.example.com(\\w*)",
+        "sslTargetOverrideUrlSubstitutionExp": "orderer1.example.com",
+        "urlSubstitutionExp": "orderer1.example.com:7050"
+      }
+    ],
+    "peer": [
+      { "mappedHost": "peer.hawkins.com",
+        "pattern": "(\\w*)peer.hawkins.com(\\w*)",
+        "sslTargetOverrideUrlSubstitutionExp": "peer.hawkins.com",
+        "urlSubstitutionExp": "peer.hawkins.com:7051"
+      },
+      { "mappedHost": "peer.montauk.com",
+        "pattern": "(\\w*)peer.montauk.com(\\w*)",
+        "sslTargetOverrideUrlSubstitutionExp": "peer.montauk.com",
+        "urlSubstitutionExp": "peer.montauk.com:7051"
+      },
+      { "mappedHost": "peer.oakridge.com",
+        "pattern": "(\\w*)peer.oakridge.com(\\w*)",
+        "sslTargetOverrideUrlSubstitutionExp": "peer.oakridge.com",
+        "urlSubstitutionExp": "peer.oakridge.com:7051"
+      }
+    ],
+  "certificateAuthorities": [
+      { "mappedHost": "ca.hawkins.com",
+        "pattern": "(\\w*)ca.hawkins.com(\\w*)",
+        "sslTargetOverrideUrlSubstitutionExp": "ca.hawkins.com",
+        "urlSubstitutionExp": "ca.hawkins.com:7054"
+      },
+      { "mappedHost": "ca.montauk.com",
+        "pattern": "(\\w*)ca.montauk.com(\\w*)",
+        "sslTargetOverrideUrlSubstitutionExp": "ca.montauk.com",
+        "urlSubstitutionExp": "ca.montauk.com:7054"
+      },
+      { "mappedHost": "ca.oakridge.com",
+        "pattern": "(\\w*)ca.oakridge.com(\\w*)",
+        "sslTargetOverrideUrlSubstitutionExp": "ca.oakridge.com",
+        "urlSubstitutionExp": "ca.oakridge.com:7054"
+      }
+    ]
+  }
+}

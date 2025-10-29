@@ -1,0 +1,193 @@
+---
+Organizations:
+  - &example-com
+      Name: example-com
+      ID: example-com
+      MSPDir: keyfiles/ordererOrganizations/example.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('example-com.member')"
+        Writers:
+          Type: Signature
+          Rule: "OR('example-com.member')"
+        Admins:
+          Type: Signature
+          Rule: "OR('example-com.admin')"
+  - &hawkins-com
+      Name: hawkins-com
+      ID: hawkins-com
+      MSPDir: keyfiles/peerOrganizations/hawkins.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('hawkins-com.admin', 'hawkins-com.peer', 'hawkins-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('hawkins-com.admin', 'hawkins-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('hawkins-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('hawkins-com.peer')"
+
+      AnchorPeers:
+      - Host: peer.hawkins.com
+        Port: 7051
+  - &montauk-com
+      Name: montauk-com
+      ID: montauk-com
+      MSPDir: keyfiles/peerOrganizations/montauk.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('montauk-com.admin', 'montauk-com.peer', 'montauk-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('montauk-com.admin', 'montauk-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('montauk-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('montauk-com.peer')"
+
+      AnchorPeers:
+      - Host: peer.montauk.com
+        Port: 7051
+  - &oakridge-com
+      Name: oakridge-com
+      ID: oakridge-com
+      MSPDir: keyfiles/peerOrganizations/oakridge.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('oakridge-com.admin', 'oakridge-com.peer', 'oakridge-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('oakridge-com.admin', 'oakridge-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('oakridge-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('oakridge-com.peer')"
+
+      AnchorPeers:
+      - Host: peer.oakridge.com
+        Port: 7051
+
+Capabilities:
+  Channel: &ChannelCapabilities
+    V1_4_3: true
+    V1_3: false
+    V1_1: false
+
+  Orderer: &OrdererCapabilities
+    V1_4_2: true
+    V1_1: false
+
+  Application: &ApplicationCapabilities
+    V1_4_2: true
+    V1_3: false
+    V1_2: false
+    V1_1: false
+
+Application: &ApplicationDefaults
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+
+  Capabilities:
+    <<: *ApplicationCapabilities
+
+Orderer: &OrdererDefaults
+  OrdererType: etcdraft
+
+  BatchTimeout: 2s
+
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+
+  Addresses:
+  - orderer1.example.com:7050
+  EtcdRaft:
+    Consenters:
+    - Host: orderer1.example.com
+      Port: 7050
+      ClientTLSCert: keyfiles/ordererOrganizations/example.com/orderers/orderer1.example.com/tls/server.crt
+      ServerTLSCert: keyfiles/ordererOrganizations/example.com/orderers/orderer1.example.com/tls/server.crt
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+
+Channel: &ChannelDefaults
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+
+  Capabilities:
+    <<: *ChannelCapabilities
+
+Profiles:
+  OrgChannel:
+    Consortium: SampleConsortium
+    <<: *ChannelDefaults
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - *hawkins-com
+      - *montauk-com
+      - *oakridge-com
+      Capabilities:
+        <<: *ApplicationCapabilities
+
+  OrdererGenesis:
+    <<: *ChannelDefaults
+    Capabilities:
+      <<: *ChannelCapabilities
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+      - *example-com
+      Capabilities:
+        <<: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - <<: *example-com
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+        - *hawkins-com
+        - *montauk-com
+        - *oakridge-com

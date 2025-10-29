@@ -1,0 +1,35 @@
+{
+  "hawkins-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "peer.hawkins.com", "port": "7051" }
+        ]
+      },
+      "version": "0"
+    }
+  },
+  "montauk-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "peer.montauk.com", "port": "7051" }
+        ]
+      },
+      "version": "0"
+    }
+  },
+  "oakridge-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "peer.oakridge.com", "port": "7051" }
+        ]
+      },
+      "version": "0"
+    }
+  }
+}

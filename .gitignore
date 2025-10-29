@@ -1,6 +1,0 @@
-vars/
-build/
-vendor/
-*.log
-*.tar.gz
-.DS_Store

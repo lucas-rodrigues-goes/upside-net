@@ -1,0 +1,114 @@
+{
+  "Admin@example.com": {
+    "key": "Admin@example.com",
+    "org": "example.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/51b7f921810294a21aede623ef906bebd42bad1030e81ecd7ab6bdaea85b3905_sk",
+    "pkey": "keyfiles/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/51b7f921810294a21aede623ef906bebd42bad1030e81ecd7ab6bdaea85b3905_sk",
+    "type": "users"
+  },
+  "Admin@hawkins.com": {
+    "key": "Admin@hawkins.com",
+    "org": "hawkins.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/keystore/92ced0134637e4597d7adef3a8fcf28af3bf98772814ea9f7ee7d631f14dede3_sk",
+    "pkey": "keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/keystore/92ced0134637e4597d7adef3a8fcf28af3bf98772814ea9f7ee7d631f14dede3_sk",
+    "type": "users"
+  },
+  "Admin@montauk.com": {
+    "key": "Admin@montauk.com",
+    "org": "montauk.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/montauk.com/users/Admin@montauk.com/msp/keystore/686b04b599d667d0e3596b878707741ab86ece6a341dbd1f294fc3966d5d6964_sk",
+    "pkey": "keyfiles/peerOrganizations/montauk.com/users/Admin@montauk.com/msp/keystore/686b04b599d667d0e3596b878707741ab86ece6a341dbd1f294fc3966d5d6964_sk",
+    "type": "users"
+  },
+  "Admin@oakridge.com": {
+    "key": "Admin@oakridge.com",
+    "org": "oakridge.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/oakridge.com/users/Admin@oakridge.com/msp/keystore/79a13d60eb821d70be97bd5ea4adf7882b03a8f57784ccd4bc4a21528e171cee_sk",
+    "pkey": "keyfiles/peerOrganizations/oakridge.com/users/Admin@oakridge.com/msp/keystore/79a13d60eb821d70be97bd5ea4adf7882b03a8f57784ccd4bc4a21528e171cee_sk",
+    "type": "users"
+  },
+  "example.com": {
+    "key": "example.com",
+    "org": "example.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/example.com/ca/534a3d1c1079ec01afe8fd557226b28d56f1045754c8712191c898b8565c555a_sk",
+    "pkey": "keyfiles/ordererOrganizations/example.com/ca/534a3d1c1079ec01afe8fd557226b28d56f1045754c8712191c898b8565c555a_sk",
+    "type": "ca"
+  },
+  "example.com.tlsca": {
+    "key": "example.com",
+    "org": "example.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/example.com/tlsca/921a03b3b14432035218135eb42c5b792f33debcfa87d1fdb2a327259f17b5d8_sk",
+    "pkey": "keyfiles/ordererOrganizations/example.com/tlsca/921a03b3b14432035218135eb42c5b792f33debcfa87d1fdb2a327259f17b5d8_sk",
+    "type": "tlsca"
+  },
+  "hawkins.com": {
+    "key": "hawkins.com",
+    "org": "hawkins.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/hawkins.com/ca/33b6a07bf0201e356a642faed2bd373210c1d824391004a2fa39a8ea422c9818_sk",
+    "pkey": "keyfiles/peerOrganizations/hawkins.com/ca/33b6a07bf0201e356a642faed2bd373210c1d824391004a2fa39a8ea422c9818_sk",
+    "type": "ca"
+  },
+  "hawkins.com.tlsca": {
+    "key": "hawkins.com",
+    "org": "hawkins.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/hawkins.com/tlsca/19ddefddb08c3061c53e96b149be20edf771a9b795fa707b20fbd58be96a3dc0_sk",
+    "pkey": "keyfiles/peerOrganizations/hawkins.com/tlsca/19ddefddb08c3061c53e96b149be20edf771a9b795fa707b20fbd58be96a3dc0_sk",
+    "type": "tlsca"
+  },
+  "montauk.com": {
+    "key": "montauk.com",
+    "org": "montauk.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/montauk.com/ca/379eb8d8887785cee3fe895be183c9865bce1c2c57a2448b9054a1da90e4eff6_sk",
+    "pkey": "keyfiles/peerOrganizations/montauk.com/ca/379eb8d8887785cee3fe895be183c9865bce1c2c57a2448b9054a1da90e4eff6_sk",
+    "type": "ca"
+  },
+  "montauk.com.tlsca": {
+    "key": "montauk.com",
+    "org": "montauk.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/montauk.com/tlsca/1eef854ad1152aea67dc831ac784b4b20f908c03bb2091fe8446d8eeae69a989_sk",
+    "pkey": "keyfiles/peerOrganizations/montauk.com/tlsca/1eef854ad1152aea67dc831ac784b4b20f908c03bb2091fe8446d8eeae69a989_sk",
+    "type": "tlsca"
+  },
+  "oakridge.com": {
+    "key": "oakridge.com",
+    "org": "oakridge.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/oakridge.com/ca/9057b0a1ba9a6f3c66feebd75b65f0b4d117f4bc0c036b58e73ca89dd3ca234f_sk",
+    "pkey": "keyfiles/peerOrganizations/oakridge.com/ca/9057b0a1ba9a6f3c66feebd75b65f0b4d117f4bc0c036b58e73ca89dd3ca234f_sk",
+    "type": "ca"
+  },
+  "oakridge.com.tlsca": {
+    "key": "oakridge.com",
+    "org": "oakridge.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/oakridge.com/tlsca/a7550f8df59b6749d28345467ba64eb29675943290037e7b83ddf01cbc0fd660_sk",
+    "pkey": "keyfiles/peerOrganizations/oakridge.com/tlsca/a7550f8df59b6749d28345467ba64eb29675943290037e7b83ddf01cbc0fd660_sk",
+    "type": "tlsca"
+  },
+  "orderer1.example.com": {
+    "key": "orderer1.example.com",
+    "org": "example.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/example.com/orderers/orderer1.example.com/msp/keystore/9cc17c81b171abf75b0b9599b114a870cf1c9ae114b0162f8aa1ddc2857e9602_sk",
+    "pkey": "keyfiles/ordererOrganizations/example.com/orderers/orderer1.example.com/msp/keystore/9cc17c81b171abf75b0b9599b114a870cf1c9ae114b0162f8aa1ddc2857e9602_sk",
+    "type": "orderers"
+  },
+  "peer.hawkins.com": {
+    "key": "peer.hawkins.com",
+    "org": "hawkins.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/hawkins.com/peers/peer.hawkins.com/msp/keystore/007c7789bc3c7cbe0ed94e3be97e6bd88b94116eb257473ad8d6e5cbb381eecc_sk",
+    "pkey": "keyfiles/peerOrganizations/hawkins.com/peers/peer.hawkins.com/msp/keystore/007c7789bc3c7cbe0ed94e3be97e6bd88b94116eb257473ad8d6e5cbb381eecc_sk",
+    "type": "peers"
+  },
+  "peer.montauk.com": {
+    "key": "peer.montauk.com",
+    "org": "montauk.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/montauk.com/peers/peer.montauk.com/msp/keystore/3d5fcb9d57d1c5a7c7c97aaf7e37dc58d2e5706fdcbeda097107f53c3f4b26dc_sk",
+    "pkey": "keyfiles/peerOrganizations/montauk.com/peers/peer.montauk.com/msp/keystore/3d5fcb9d57d1c5a7c7c97aaf7e37dc58d2e5706fdcbeda097107f53c3f4b26dc_sk",
+    "type": "peers"
+  },
+  "peer.oakridge.com": {
+    "key": "peer.oakridge.com",
+    "org": "oakridge.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/oakridge.com/peers/peer.oakridge.com/msp/keystore/7a79b4cebc810a7d438d9e2b80a6cc422eb1c2d3bc2d733009342701f3fec133_sk",
+    "pkey": "keyfiles/peerOrganizations/oakridge.com/peers/peer.oakridge.com/msp/keystore/7a79b4cebc810a7d438d9e2b80a6cc422eb1c2d3bc2d733009342701f3fec133_sk",
+    "type": "peers"
+  }
+}

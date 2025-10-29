@@ -1,0 +1,128 @@
+{
+  "allcas": [
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca.hawkins.com",
+      "mspid": "hawkins-com",
+      "name": "ca",
+      "org": "hawkins.com",
+      "port": "7054",
+      "portmap": "",
+      "type": "ca",
+      "url": "ca.hawkins.com"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca.montauk.com",
+      "mspid": "montauk-com",
+      "name": "ca",
+      "org": "montauk.com",
+      "port": "7054",
+      "portmap": "",
+      "type": "ca",
+      "url": "ca.montauk.com"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca.oakridge.com",
+      "mspid": "oakridge-com",
+      "name": "ca",
+      "org": "oakridge.com",
+      "port": "7054",
+      "portmap": "",
+      "type": "ca",
+      "url": "ca.oakridge.com"
+    }
+  ],
+  "allcouchdbs": [],
+  "allorderers": [
+    {
+      "fullname": "orderer1.example.com",
+      "mspid": "example-com",
+      "name": "orderer1",
+      "org": "example.com",
+      "port": "7050",
+      "portmap": "",
+      "type": "orderer",
+      "url": "orderer1.example.com"
+    }
+  ],
+  "allorgs": [
+    "example.com",
+    "hawkins.com",
+    "montauk.com",
+    "oakridge.com"
+  ],
+  "allpeers": [
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer.hawkins.com",
+      "mspid": "hawkins-com",
+      "name": "peer",
+      "org": "hawkins.com",
+      "port": "7051",
+      "portmap": "",
+      "type": "peer",
+      "url": "peer.hawkins.com"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer.montauk.com",
+      "mspid": "montauk-com",
+      "name": "peer",
+      "org": "montauk.com",
+      "port": "7051",
+      "portmap": "",
+      "type": "peer",
+      "url": "peer.montauk.com"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer.oakridge.com",
+      "mspid": "oakridge-com",
+      "name": "peer",
+      "org": "oakridge.com",
+      "port": "7051",
+      "portmap": "",
+      "type": "peer",
+      "url": "peer.oakridge.com"
+    }
+  ],
+  "caorgs": [
+    "hawkins.com",
+    "montauk.com",
+    "oakridge.com"
+  ],
+  "console_port": "7203",
+  "explorer_port": "7201",
+  "ordererorgs": [
+    "example.com"
+  ],
+  "orgattrs": {
+    "example.com": {
+      "certpath": "ordererOrganizations",
+      "mspid": "example-com"
+    },
+    "hawkins.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "hawkins-com"
+    },
+    "montauk.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "montauk-com"
+    },
+    "oakridge.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "oakridge-com"
+    }
+  },
+  "peerorgs": [
+    "hawkins.com",
+    "montauk.com",
+    "oakridge.com"
+  ],
+  "portainer_port": "7202"
+}

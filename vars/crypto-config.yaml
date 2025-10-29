@@ -1,0 +1,52 @@
+---
+OrdererOrgs:
+  - Name: example.com
+    Domain: example.com
+    Specs:
+      - Hostname: orderer1
+        SANS:
+          - orderer1.example.com
+
+PeerOrgs:
+  - Name: hawkins.com
+    Domain: hawkins.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca
+      CommonName: ca.hawkins.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer
+        CommonName: peer.hawkins.com
+        SANS:
+          - peer.hawkins.com
+  - Name: montauk.com
+    Domain: montauk.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca
+      CommonName: ca.montauk.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer
+        CommonName: peer.montauk.com
+        SANS:
+          - peer.montauk.com
+  - Name: oakridge.com
+    Domain: oakridge.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca
+      CommonName: ca.oakridge.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer
+        CommonName: peer.oakridge.com
+        SANS:
+          - peer.oakridge.com

@@ -1,0 +1,10 @@
+{
+  "example-com": {
+    "endpoint": [
+      {
+        "host": "orderer1.example.com",
+        "port": 7050
+      }
+    ]
+  }
+}

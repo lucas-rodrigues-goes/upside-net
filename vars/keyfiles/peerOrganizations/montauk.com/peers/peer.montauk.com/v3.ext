@@ -1,0 +1,4 @@
+keyUsage = critical,digitalSignature
+basicConstraints = critical,CA:FALSE
+subjectAltName=IP: 26.136.139.187,DNS:peer.montauk.com,DNS:peer-montauk-com,DNS:localhost,IP:127.0.0.1
+authorityKeyIdentifier = keyid,issuer
