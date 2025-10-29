@@ -3,7 +3,7 @@
   "description": "Generated network configuration file",
   "version": "0.1",
   "client": {
-    "organization": "hawkins.com",
+    "organization": "oakridge.com",
     "credentialStore": {
       "path": "/tmp/hfc-kvs",
       "cryptoStore": {
@@ -21,7 +21,7 @@
       "users": {
         "Admin": {
           "cert": "/keyfiles/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem",
-          "private_key": "/keyfiles/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/51b7f921810294a21aede623ef906bebd42bad1030e81ecd7ab6bdaea85b3905_sk"
+          "private_key": "/keyfiles/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/ce9f0eda4d919c85c7c0532cd6f318fc6cc8447843304997dada7cb4562c74ec_sk"
         }
       }
     },
@@ -33,7 +33,7 @@
       "users": {
         "Admin": {
           "cert": "/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/signcerts/Admin@hawkins.com-cert.pem",
-          "private_key": "/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/keystore/92ced0134637e4597d7adef3a8fcf28af3bf98772814ea9f7ee7d631f14dede3_sk"
+          "private_key": "/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/keystore/2d6386957ed9569a191b1939f796a4f544c3e34ee09a4d87ebcd7e9c5ead0f81_sk"
         }
       }
     },
@@ -45,7 +45,7 @@
       "users": {
         "Admin": {
           "cert": "/keyfiles/peerOrganizations/montauk.com/users/Admin@montauk.com/msp/signcerts/Admin@montauk.com-cert.pem",
-          "private_key": "/keyfiles/peerOrganizations/montauk.com/users/Admin@montauk.com/msp/keystore/686b04b599d667d0e3596b878707741ab86ece6a341dbd1f294fc3966d5d6964_sk"
+          "private_key": "/keyfiles/peerOrganizations/montauk.com/users/Admin@montauk.com/msp/keystore/08dc6d8ace90b6d12704f3d03f03c7b5f2cf2528f0afaa0c1d2b195898ab6ddc_sk"
         }
       }
     },
@@ -57,7 +57,7 @@
       "users": {
         "Admin": {
           "cert": "/keyfiles/peerOrganizations/oakridge.com/users/Admin@oakridge.com/msp/signcerts/Admin@oakridge.com-cert.pem",
-          "private_key": "/keyfiles/peerOrganizations/oakridge.com/users/Admin@oakridge.com/msp/keystore/79a13d60eb821d70be97bd5ea4adf7882b03a8f57784ccd4bc4a21528e171cee_sk"
+          "private_key": "/keyfiles/peerOrganizations/oakridge.com/users/Admin@oakridge.com/msp/keystore/5237374789b0fdeb74b75d527d95e4095d47361179ad9f4642359fbe4646f8c5_sk"
         }
       }
     }

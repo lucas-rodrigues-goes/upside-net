@@ -3,7 +3,7 @@
 cd /vars
 
 export PEER_TLS_ROOTCERT_FILE=/vars/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/tls/ca.crt
-export ADMINPRIVATEKEY=/vars/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/keystore/92ced0134637e4597d7adef3a8fcf28af3bf98772814ea9f7ee7d631f14dede3_sk
+export ADMINPRIVATEKEY=/vars/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/keystore/2d6386957ed9569a191b1939f796a4f544c3e34ee09a4d87ebcd7e9c5ead0f81_sk
 export ADMINCERT=/vars/keyfiles/peerOrganizations/hawkins.com/users/Admin@hawkins.com/msp/signcerts/Admin@hawkins.com-cert.pem
 
 discover endorsers --peerTLSCA $PEER_TLS_ROOTCERT_FILE \

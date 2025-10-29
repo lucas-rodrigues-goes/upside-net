@@ -3,24 +3,29 @@
   "EndorsersByGroups": {
     "G0": [
       {
-        "MSPID": "montauk-com",
-        "Endpoint": "peer.montauk.com:7051"
-      }
-    ],
-    "G1": [
-      {
         "MSPID": "oakridge-com",
         "Endpoint": "peer.oakridge.com:7051"
       }
     ],
-    "G2": [
+    "G1": [
       {
         "MSPID": "hawkins-com",
         "Endpoint": "peer.hawkins.com:7051"
       }
+    ],
+    "G2": [
+      {
+        "MSPID": "montauk-com",
+        "Endpoint": "peer.montauk.com:7051"
+      }
     ]
   },
   "Layouts": [
+    {
+      "quantities_by_group": {
+        "G1": 1
+      }
+    },
     {
       "quantities_by_group": {
         "G2": 1
@@ -29,11 +34,6 @@
     {
       "quantities_by_group": {
         "G0": 1
-      }
-    },
-    {
-      "quantities_by_group": {
-        "G1": 1
       }
     }
   ]
