@@ -14,5 +14,5 @@ if [ -f 'go/go.mod' ] && [ ! -d 'go/vendor' ]; then
   export GO111MODULE=off
   cd -
 fi
-peer chaincode install --tls -l golang -v 1.0 -n blendchaincode \
+peer chaincode install --tls -l golang -v 3.0 -n blendchaincode \
   -p github.com/chaincode/blendchaincode/go

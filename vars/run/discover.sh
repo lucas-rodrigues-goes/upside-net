@@ -11,9 +11,9 @@ discover endorsers --peerTLSCA $PEER_TLS_ROOTCERT_FILE \
   --userCert $ADMINCERT \
   --MSP hawkins-com --channel mychannel \
   --server peer.hawkins.com:7051 \
-  --chaincode simple | jq '.[0]' | \
+  --chaincode blendchaincode | jq '.[0]' | \
   jq 'del(.. | .Identity?)' | jq 'del(.. | .LedgerHeight?)' \
-  > /vars/discover/mychannel_simple_endorsers.json
+  > /vars/discover/mychannel_blendchaincode_endorsers.json
 
 discover config --peerTLSCA $PEER_TLS_ROOTCERT_FILE \
   --userKey $ADMINPRIVATEKEY \
