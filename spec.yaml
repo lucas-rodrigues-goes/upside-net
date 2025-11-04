@@ -1,0 +1,21 @@
+fabric:
+  cas:
+  - "ca.hawkins.com"
+  - "ca.montauk.com"
+  - "ca.oakridge.com"
+
+  peers: 
+  - "peer.hawkins.com"
+  - "peer.montauk.com"
+  - "peer.oakridge.com"
+  orderers:
+  - "orderer.example.com"
+  settings:
+    ca:
+      FABRIC_LOGGING_SPEC: DEBUG
+    peer:
+      FABRIC_LOGGING_SPEC: DEBUG
+    orderer:
+      FABRIC_LOGGING_SPEC: DEBUG
+
+  netname: "upside-net"
