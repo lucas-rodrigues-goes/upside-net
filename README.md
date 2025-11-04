@@ -6,6 +6,14 @@ Caso o código vá a ser executado em uma máquina **Windows**, comandos que inc
 
 ## Inicialização
 
+* **Incluir dependencias GO localmente**
+
+  ```bash
+  cd ./chaincode/
+  go mod vendor
+  cd ..
+  ```
+
 * **Inicializar Fabric (sem pasta vars ou renomeada)**
 
   ```bash
